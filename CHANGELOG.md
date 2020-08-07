@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Set `utm_source` and `utm_campaign` correctly [#2](https://github.com/shgysk8zer0/utm-generator-app/issues/2)
 - Set correct `theme_color` in webapp manifest
+- Correctly set `autocapitalize` attribute on `<input>`s
+- Fix typo in notification body text
 
 ## [v1.0.0] - 2020-08-06
 
