@@ -10,8 +10,7 @@
         "ecmaVersion": 2018
     },
     "plugins": [
-      "async-await",
-      "frontmatter"
+      "async-await"
     ],
     "rules": {
         "indent": [
