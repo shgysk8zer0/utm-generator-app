@@ -1,13 +1,13 @@
 {
   "name": "UTM Generator App",
   "short_name": "UTM Gen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "lang": "en",
   "dir": "ltr",
   "description": "Just another UTM Code Generator",
   "orientation": "any",
   "start_url": "/",
-  "theme_color": "#528ff9",
+  "theme_color": "#007bff",
   "background_color": "#242424",
   "display": "standalone",
   "icons": [{

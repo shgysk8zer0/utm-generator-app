@@ -1,7 +1,7 @@
 'use strict';
 /* global config */
 /* eslint-env serviceworker */
-/* 2020-08-06T19:09 */
+/* 2020-08-07T07:30 */
 
 self.importScripts('./sw-config.js');
 
@@ -78,6 +78,7 @@ self.addEventListener('fetch', event => {
 					}
 				}
 			} else {
+				console.info(event.request.url);
 				return fetch(event.request);
 			}
 		})());

@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.1] - 2020-08-07
+
+### Added
+- `pattern` for all `<input>`s
+
+### Changed
+- Add GitHub API and avatar to service worker cache
+- Add other missing cache items
+- All `<input>`s now do not capitalize by default, also changing suggestions via `<datalist>`s
+- Prompt user to reload on updates
+
+### Fixed
+- Set `utm_source` and `utm_campaign` correctly [#2](https://github.com/shgysk8zer0/utm-generator-app/issues/2)
+- Set correct `theme_color` in webapp manifest
+
 ## [v1.0.0] - 2020-08-06
 
 Inital Release
