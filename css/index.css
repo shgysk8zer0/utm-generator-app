@@ -1,38 +1,57 @@
 @charset "UTF-8";
 
-@import url("https://cdn.kernvalley.us/css/core-css/theme/default/index.css");
-@import url("https://cdn.kernvalley.us/css/normalize/normalize.css");
-@import url("https://cdn.kernvalley.us/css/core-css/rem.css");
-@import url("https://cdn.kernvalley.us/css/core-css/viewport.css");
-@import url("https://cdn.kernvalley.us/css/core-css/element.css");
-@import url("https://cdn.kernvalley.us/css/core-css/class-rules.css");
-@import url("https://cdn.kernvalley.us/css/core-css/cdn-fonts.css");
-@import url("https://cdn.kernvalley.us/css/animate.css/animate.css");
-@import url("https://cdn.kernvalley.us/css/core-css/animations.css");
-@import url("https://cdn.kernvalley.us/css/core-css/scrollbar.css");
-@import url("https://cdn.kernvalley.us/css/core-css/accordion.css");
-@import url("./vars.css");
-@import url("./layout.css");
-
-input[hidden] + label[for].btn-toggle {
-	background-color: var(--button-disabled-background);
-	margin: 0.3rem;
-	transition: background-color 300ms ease-in-out;
+:root {
+	font-size: 18px;
+	font-size: clamp(16px, 1.3vmax, 22px);
 }
 
-input[hidden]:checked + label[for].btn-toggle {
-	background-color: var(--button-background);
+body.grid {
+	grid-template-columns: 100%;
+	grid-template-rows: auto;
+	grid-template-areas: "main" "footer";
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
-input[hidden]:not(:checked) + label[for].btn-toggle .when-checked {
-	display: none;
+.accordion summary {
+	border-radius: 3em;
 }
 
-input[hidden]:checked + label[for].btn-toggle .when-unchecked {
-	display: none;
+#generator {
+	width: 95vw;
+	max-width: 600px;
 }
 
-img.avatar {
-	vertical-align: middle;
-	margin-left: 1.2em;
+#main {
+	padding: 2em 0;
+	grid-area: main;
+	background-color: #aeaeae;
+}
+
+#out {
+	max-width: 80%;
+}
+
+form {
+	overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+	#main {
+		background-color: #0a0a0a;
+	}
+}
+
+#footer {
+	grid-area: footer;
+	padding: 1.4em;
+	background-color: #232323;
+	color: #fafafa;
+}
+
+button.btn[is="share-button"] {
+	bottom: 1rem;
+	right: 1rem;
+	padding: 0.8rem;
+	font-size: 1.5rem;
 }

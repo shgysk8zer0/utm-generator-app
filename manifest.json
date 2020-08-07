@@ -1,10 +1,10 @@
 {
-  "name": "static template",
-  "short_name": "static",
+  "name": "UTM Generator App",
+  "short_name": "UTM Gen",
   "version": "1.0.0",
   "lang": "en",
   "dir": "ltr",
-  "description": "A template repository for static sites, including skeleton JS, CSS, SVGs, fonts, etc.",
+  "description": "Just another UTM Code Generator",
   "orientation": "any",
   "start_url": "/",
   "theme_color": "#528ff9",
@@ -27,16 +27,31 @@
     "purpose": "any maskable"
   }],
   "screenshots": [{
-    "src": "https://i.imgur.com/Mx3Wlp0l.jpeg",
-    "sizes": "640x313",
-    "type": "image/jpeg"
+    "src": "https://i.imgur.com/L8UwMm3l.png",
+    "sizes": "640x316",
+    "type": "image/png"
   }],
-  "shortcuts": [],
-  "share_target": {},
-  "categories": [],
-  "related_applications": [],
-  "developer": {
-		"name": "Chris Zuber",
-		"url": "https://kernvalley.us"
-	}
+  "categories": [
+    "business",
+    "productivity",
+    "social",
+    "utility"
+  ],
+  "features": [
+    "Generates UTM codes using an easy to fill-out form",
+    "Easily copy or share generated URLs",
+    "Works entirely offline",
+    "Supports dark mode, so it's easy on the eyes",
+    "Supports Share Target API to pre-fill URL field"
+  ],
+  "share_target": {
+    "method": "GET",
+    "action": "/",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }

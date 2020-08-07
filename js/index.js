@@ -1,47 +1,74 @@
-import 'https://unpkg.com/@webcomponents/custom-elements@1.4.1/custom-elements.min.js';
-import 'https://cdn.kernvalley.us/js/std-js/deprefixer.js';
-import 'https://cdn.kernvalley.us/js/std-js/shims.js';
-import 'https://cdn.kernvalley.us/components/share-button.js';
-import 'https://cdn.kernvalley.us/components/current-year.js';
-import 'https://cdn.kernvalley.us/components/bacon-ipsum.js';
-import 'https://cdn.kernvalley.us/components/gravatar-img.js';
-import 'https://cdn.kernvalley.us/components/pwa/install.js';
-import 'https://cdn.kernvalley.us/components/github/user.js';
-import 'https://cdn.kernvalley.us/components/share-to-button/share-to-button.js';
-import 'https://cdn.kernvalley.us/components/date-locale.js';
-import {$, ready } from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+document.forms.utm.hidden = false;
 
-document.documentElement.classList.replace('no-js', 'js');
-document.body.classList.toggle('no-dialog', document.createElement('dialog') instanceof HTMLUnknownElement);
-document.body.classList.toggle('no-details', document.createElement('details') instanceof HTMLUnknownElement);
+document.forms.utm.addEventListener('submit', async event => {
+	event.preventDefault();
+	const data = new FormData(event.target);
 
-ready().then(async () => {
-	$('[data-scroll-to]').click(event => {
-		const target = document.querySelector(event.target.closest('[data-scroll-to]').dataset.scrollTo);
-		target.scrollIntoView({
-			bahavior: 'smooth',
-			block: 'start',
+	const url = new URL(data.get('url'));
+	data.delete('url');
+
+	Array.from(data.entries()).forEach(([key, value]) => {
+		if (typeof value !== 'string' || value === '') {
+			data.delete(key);
+		}
+	});
+
+	url.search = `?${new URLSearchParams(data)}`;
+	document.getElementById('out').value = url.href;
+
+	customElements.whenDefined('html-notification').then(async () => {
+		const HTMLNotificationElement = customElements.get('html-notification');
+		new HTMLNotificationElement('URL Generated', {
+			body: 'HWhat next?',
+			icon: '/img/favicon.svg',
+			tag: 'clipboard',
+			requireInteraction: true,
+			vibrate: [800, 0, 800],
+			data: { url, form: event.target.name },
+			actions: [{
+				title: 'Share it',
+				action: 'share',
+			}, {
+				title: 'Copy it',
+				action: 'copy',
+			}, {
+				title: 'Reset form',
+				action: 'reset',
+			}]
+		}).addEventListener('notificationclick', async ({ action, notification }) => {
+			switch(action) {
+				case 'copy':
+					if (('clipboard' in navigator) && navigator.clipboard.writeText instanceof Function) {
+						Promise.all([
+							navigator.clipboard.writeText(notification.data.url),
+							customElements.whenDefined('html-popup'),
+						]).then(async () => {
+							const Popup = customElements.get('html-popup');
+							const popup = new Popup('URL copied', { timer: 5000, autoRemove: true });
+							document.body.append(popup);
+							await notification.close();
+							popup.show();
+						});
+					} else {
+						alert('Clipboard API not supported');
+					}
+					break;
+
+				case 'share':
+					if ((navigator.canShare instanceof Function) && navigator.canShare({url: 'https://example.com' })) {
+						const url = notification.data.url;
+						notification.close();
+						await navigator.share({ url });
+					} else {
+						alert('Share API not supported');
+					}
+					break;
+
+				case 'reset':
+					notification.close();
+					document.forms[notification.data.form].reset();
+					break;
+			}
 		});
-	});
-
-	$('[data-show]').click(event => {
-		const target = document.querySelector(event.target.closest('[data-show]').dataset.show);
-		if (target instanceof HTMLElement) {
-			target.show();
-		}
-	});
-
-	$('[data-show-modal]').click(event => {
-		const target = document.querySelector(event.target.closest('[data-show-modal]').dataset.showModal);
-		if (target instanceof HTMLElement) {
-			target.showModal();
-		}
-	});
-
-	$('[data-close]').click(event => {
-		const target = document.querySelector(event.target.closest('[data-close]').dataset.close);
-		if (target instanceof HTMLElement) {
-			target.tagName === 'DIALOG' ? target.close() : target.open = false;
-		}
 	});
 });
