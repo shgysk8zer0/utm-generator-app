@@ -1,9 +1,9 @@
 'use strict';
 /* global config */
 /* eslint-env serviceworker */
-/* 2020-07-16T14:58 */
+/* {{ site.data.app.version | default: site.version }} */
 
-self.importScripts('/sw-config.js');
+self.importScripts('./sw-config.js');
 
 self.addEventListener('install', async event => {
 	event.waitUntil((async () => {
@@ -87,6 +87,7 @@ self.addEventListener('fetch', event => {
 self.addEventListener('push', event => {
 	const data = event.data.json();
 	if (('notification' in data) && Array.isArray(data.notification) && Notification.permission === 'granted') {
+
 		this.registration.showNotification(...data.notification);
 	}
 });
