@@ -19,7 +19,7 @@ document.forms.utm.addEventListener('submit', async event => {
 	customElements.whenDefined('html-notification').then(async () => {
 		const HTMLNotificationElement = customElements.get('html-notification');
 		new HTMLNotificationElement('URL Generated', {
-			body: 'HWhat next?',
+			body: 'What would you like to do next?',
 			icon: '/img/favicon.svg',
 			tag: 'clipboard',
 			requireInteraction: true,
