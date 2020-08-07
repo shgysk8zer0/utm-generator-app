@@ -12,6 +12,7 @@ const config = {
 		'https://cdn.kernvalley.us/js/std-js/esQuery.js',
 		'https://cdn.kernvalley.us/components/custom-element.js',
 		'https://cdn.kernvalley.us/components/share-button.js',
+		'https://cdn.kernvalley.us/components/share-target.js',
 		'https://cdn.kernvalley.us/components/pwa/install.js',
 		'https://cdn.kernvalley.us/components/pwa/prompt.js',
 		'https://cdn.kernvalley.us/components/pwa/prompt.html',

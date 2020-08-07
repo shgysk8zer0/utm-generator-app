@@ -41,6 +41,17 @@
     "Generates UTM codes using an easy to fill-out form",
     "Easily copy or share generated URLs",
     "Works entirely offline",
-    "Supports dark mode, so it's easy on the eyes"
-  ]
+    "Supports dark mode, so it's easy on the eyes",
+    "Supports Share Target API to pre-fill URL field"
+  ],
+  "share_target": {
+    "method": "GET",
+    "action": "/",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
