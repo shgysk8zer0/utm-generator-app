@@ -48,7 +48,7 @@ document.forms.utm.addEventListener('submit', async event => {
 							document.body.append(popup);
 							await notification.close();
 							popup.show();
-						})
+						});
 					} else {
 						alert('Clipboard API not supported');
 					}
