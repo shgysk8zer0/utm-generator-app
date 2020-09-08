@@ -9,7 +9,7 @@
 		<meta itemprop="description" content="Just another UTM Code Generator" />
 		<meta name="keywords" content="utm, generator, seo, pwa" />
 		<meta itemprop="keywords" content="utm, generator, seo, pwa" />
-		<meta name="referrer" content="origin-when-cross-origin"/>
+		<meta name="referrer" content="no-referrer"/>
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta itemprop="thumbnailUrl" content="https://i.imgur.com/L8UwMm3l.png" />
@@ -36,14 +36,27 @@
 		<meta name="theme-color" content="#007bff" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="#007bff" />
 		<title itemprop="headline">UTM Code Generator</title>
-<script type="module" src="https://cdn.kernvalley.us/components/popup/html-popup.js" crossorigin="anonymous" referrerpolicy="no-referrer" async=""></script>
+		<link rel="preconnect" href="https://api.github.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preload" href="https://cdn.kernvalley.us/css/core-css/utility.css" as="style" type="text/css" referrerpolicy="no-referrer" importance="high" />
+		<link rel="preload" href="https://cdn.kernvalley.us/css/core-css/theme/base.css" as="style" type="text/css" referrerpolicy="no-referrer" importance="high" />
+		<link rel="preload" href="https://cdn.kernvalley.us/css/core-css/theme/default/light.css" as="style" type="text/css" referrerpolicy="no-referrer" importance="high" />
+		<link rel="preload" href="https://cdn.kernvalley.us/css/core-css/theme/default/dark.css" as="style" type="text/css" referrerpolicy="no-referrer" importance="high" />
+		<link rel="preload" href="https://cdn.kernvalley.us/fonts/roboto.woff2" as="font" type="font/woff2" crossorigin="anonymous" referrerpolicy="no-referrer" importance="auto" />
+		<link rel="modulepreload" href="https://cdn.kernvalley.us/js/std-js/shims.js" as="script" type="text/javascript" crossorigin="anonymous" refererpolicy="no-referrer" importance="high" />
+		<link rel="modulepreload" href="https://cdn.kernvalley.us/js/std-js/deprefixer.js" as="script" type="text/javascript" crossorigin="anonymous" refererpolicy="no-referrer" importance="high" />
+		<link rel="modulepreload" href="https://cdn.kernvalley.us/js/std-js/loader.js" as="script" type="text/javascript" crossorigin="anonymous" refererpolicy="no-referrer" importance="high" />
+		<link rel="modulepreload" href="https://cdn.kernvalley.us/js/std-js/google-analytics.js" as="script" type="text/javascript" crossorigin="anonymous" refererpolicy="no-referrer" importance="high" />
+		<link rel="modulepreload" href="/js/consts.js" as="script" type="text/javascript" refererpolicy="no-referrer" importance="high" />
+		<link rel="preload" href="https://cdn.kernvalley.us/components/github/user.html" as="fetch" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preload" href="https://cdn.kernvalley.us/components/github/user.css" as="style" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script type="module" src="https://cdn.kernvalley.us/components/popup/html-popup.js" crossorigin="anonymous" referrerpolicy="no-referrer" async=""></script>
 		<script type="module" src="https://cdn.kernvalley.us/components/notification/html-notification.js" crossorigin="anonymous" referrerpolicy="no-referrer" async=""></script>
 		<script type="module" src="https://cdn.kernvalley.us/components/pwa/install.js" crossorigin="anonymous" referrerpolicy="no-referrer" async=""></script>
 		<script type="module" src="https://cdn.kernvalley.us/components/pwa/prompt.js" crossorigin="anonymous" referrerpolicy="no-referrer" async=""></script>
 		<script type="module" src="https://cdn.kernvalley.us/components/github/user.js" crossorigin="anonymous" referrerpolicy="no-referrer" async=""></script>
 		<script type="module" src="https://cdn.kernvalley.us/components/share-button.js" crossorigin="anonymous" referrerpolicy="no-referrer" async=""></script>
 		<script type="module" src="https://cdn.kernvalley.us/components/share-target.js" crossorigin="anonymous" referrerpolicy="no-referrer" async=""></script>
-		<script src="/js/index.js" async="" defer=""></script>
+		<script src="/js/index.js" type="module" async="" defer=""></script>
 		<link rel="manifest" href="/manifest.json" />
 		<link rel="license" href="/LICENSE" />
 		<link rel="icon" href="/img/favicon.svg" type="image/svg+xml" sizes="any" />
@@ -51,9 +64,6 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/img/icon-16.png" />
 		<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#007bff" />
-		<link rel="preconnect" href="https://api.github.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="preload" href="https://cdn.kernvalley.us/components/github/user.html" as="fetch" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="preload" href="https://cdn.kernvalley.us/components/github/user.css" as="style" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="/css/index.css" media="all" />
 		<link rel="stylesheet" href="https://cdn.kernvalley.us/css/core-css/element.css" crossorigin="anonymous" referrerpolicy="no-referrer" media="all" />
 		<link rel="stylesheet" href="https://cdn.kernvalley.us/css/core-css/class-rules.css" crossorigin="anonymous" referrerpolicy="no-referrer" media="all" />
@@ -86,7 +96,7 @@
 						</div>
 						<div class="form-group">
 							<label for="source" class="input-label required">Campaign Source</label>
-							<input type="text" name="utm_source" id="source" class="input" list="source-list" placeholder="e.g. Gooogle" autocapitalize="off" pattern="[\w \-]+" required="" />
+							<input type="text" name="utm_source" id="source" class="input" list="source-list" placeholder="e.g. Google" autocapitalize="off" pattern="[\w \-]+" required="" />
 							<datalist id="source-list">
 								<option value="google" />
 								<option value="facebook" />
@@ -96,8 +106,8 @@
 							</datalist>
 						</div>
 						<div class="form-group">
-							<label for="name" class="input-label required">Campaign Medium</label>
-							<input type="text" name="utm_medium" id="medium" class="input" list="medium-list" placeholder="the referrer, e.g. email" autocapitalize="off" pattern="[\w \-]+" required="" />
+							<label for="name" class="input-label">Campaign Medium</label>
+							<input type="text" name="utm_medium" id="medium" class="input" list="medium-list" placeholder="the referrer, e.g. email" autocapitalize="off" pattern="[\w \-]+" />
 							<datalist id="medium-list">
 								<option value="web" />
 								<option value="email" />
@@ -105,18 +115,20 @@
 							</datalist>
 						</div>
 						<div class="form-group">
-							<label for="name" class="input-label required">Campaign Name</label>
-							<input type="text" name="utm_campaign" id="source" class="input" placeholder="a promo code, for example" autocapitalize="off" pattern="[\w \-]+" required="" />
+							<label for="name" class="input-label">Campaign Name</label>
+							<input type="text" name="utm_campaign" id="source" class="input" placeholder="a promo code, for example" autocapitalize="off" pattern="[\w \-]+" />
 						</div>
 						<details class="accordion">
 							<summary>Options</summary>
 							<div class="form-group">
-								<label for="term" class="input-label">Campaign Term</label>
+								<label for="term" class="input-label">Campaign Term (keyword)</label>
 								<input type="text" name="utm_term" pattern="[\w \-]+" id="term" class="input" placeholder="e.g. events" autocapitalize="off" />
 							</div>
 							<div class="form-group">
 								<label for="content" class="input-label">Campaign Content</label>
-								<input type="text" name="utm_content" id="content" class="input" placeholder="e.g. header" autocapitalize="off" pattern="[\w \-]+" />
+								<input type="text" name="utm_content" id="content" class="input" placeholder="e.g. header or image" autocapitalize="off" pattern="[\w \-]+" />
+								<br />
+								<i>Describes the element a user would click on</i>
 							</div>
 						</details>
 					</fieldset>
@@ -167,7 +179,6 @@
 				<path d="M5.969 7.969a2.969 2.969 0 1 1-5.938 0 2.969 2.969 0 1 1 5.938 0zm9.969 5a2.969 2.969 0 1 1-5.938 0 2.969 2.969 0 1 1 5.938 0zm0-10a2.969 2.969 0 1 1-5.938 0 2.969 2.969 0 1 1 5.938 0z" overflow="visible"/>
 				<path d="M12.625 2.156L2.562 7.031.75 7.938l1.812.906 10.032 5.062.906-1.812-8.22-4.156 8.219-4-.875-1.782z" overflow="visible"/>
 			</svg>
-
 		</button>
 	</body>
 </html>

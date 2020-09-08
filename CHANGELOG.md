@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.2] - 2020-09-08
+
+### Added
+- Enable preloading
+- Add polyfills to script and allow for Google Analytics
+
+### Changed
+- Do not require UTM medium or campaign name
+
+### Fixed
+- Correct paths for `<html-notification>` template and style
+
 ## [v1.0.1] - 2020-08-07
 
 ### Added

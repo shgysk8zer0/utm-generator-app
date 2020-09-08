@@ -1,3 +1,3 @@
 /
   X-Content-Type-Options: "nosniff"
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.kernvalley.us; style-src 'self' https://cdn.kernvalley.us; font-src https://cdn.kernvalley.us; img-src 'self' https://cdn.kernvalley.us https://*.githubusercontent.com/u/ https://i.imgur.com; connect-src 'self' https://cdn.kernvalley.us https://api.github.com/users/;
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.kernvalley.us https://cdn.polyfill.io/v3/polyfill.min.js; style-src 'self' https://cdn.kernvalley.us; font-src https://cdn.kernvalley.us; img-src 'self' https://cdn.kernvalley.us https://*.githubusercontent.com/u/ https://i.imgur.com; connect-src 'self' https://cdn.kernvalley.us https://api.github.com/users/ https://cdn.polyfill.io/v3/polyfill.min.js;
