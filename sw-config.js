@@ -1,16 +1,25 @@
 /* eslint no-unused-vars: 0 */
 /* eslint-env serviceworker */
+
 const config = {
-	version: '1.0.1',
+	version: '1.0.2',
 	fresh: [
 		'https://api.github.com/users/shgysk8zer0',
 	].map(url => new URL(url, location.origin).href),
 	stale: [
 		'/',
+		'/manifest.json',
 		'/js/index.js',
+		'/js/consts.js',
 		'/css/index.css',
 		'/img/favicon.svg',
+		'/img/icon-32.png',
+		'https://cdn.polyfill.io/v3/polyfill.min.js',
+		'https://cdn.kernvalley.us/js/std-js/shims.js',
+		'https://cdn.kernvalley.us/js/std-js/deprefixer.js',
 		'https://cdn.kernvalley.us/js/std-js/functions.js',
+		'https://cdn.kernvalley.us/js/std-js/loader.js',
+		'https://cdn.kernvalley.us/js/std-js/google-analytics.js',
 		'https://cdn.kernvalley.us/js/std-js/esQuery.js',
 		'https://cdn.kernvalley.us/components/custom-element.js',
 		'https://cdn.kernvalley.us/js/std-js/webShareApi.js',
@@ -28,8 +37,8 @@ const config = {
 		'https://cdn.kernvalley.us/components/popup/html-popup.html',
 		'https://cdn.kernvalley.us/components/popup/html-popup.css',
 		'https://cdn.kernvalley.us/components/notification/html-notification.js',
-		'https://cdn.kernvalley.us/components/popup/notification-notification.html',
-		'https://cdn.kernvalley.us/components/popup/notification-notification.css',
+		'https://cdn.kernvalley.us/components/notification/html-notification.html',
+		'https://cdn.kernvalley.us/components/notification/html-notification.css',
 		'https://cdn.kernvalley.us/components/github/user.js',
 		'https://cdn.kernvalley.us/components/github/user.html',
 		'https://cdn.kernvalley.us/components/github/user.css',
